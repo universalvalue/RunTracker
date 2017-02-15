@@ -33,11 +33,14 @@ int ReadRuns (std::list<Run> &RunList, std::list<Track> &TrackList, const char R
 		getline( InFile, TimesAll, '\n'); 
 		std::vector<std::string> Times = Split(TimesAll, ',');
 
-		for (int j = 0; j < TrackList.size(); j++){
-			if TrackList	
+		std::list<Track>::iterator it;
+		for (it = TrackList.begin(); it != TrackList.end(); it++){
+			if (it->getTitle() == trackname){
+				runtrack = *it;	
+			}	
 		}
 
-		RunList.push_back( Run(date, time, distance, trackname, Times)); // construct and add new Student
+		RunList.push_back( Run(date, time, distance, runtrack, Times)); // construct and add new Student
 	}
 	InFile.close();
 	return i; // report success? ... i.e. return the record count ... 
