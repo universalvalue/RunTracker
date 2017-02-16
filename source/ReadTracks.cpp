@@ -37,7 +37,7 @@ int ReadTracks ( std::list<Track> &TrackList, const char TRACKS_DATA[]){
 			    trackinfo[Descriptions[j]] = Distances[j]; 
 		}
 
-		TrackList.push_back( Run(date, time, distance, runtrack, Times)); // construct and add new Student
+		TrackList.push_back( Track( trackname, trackinfo)); // construct and add new Student
 	}
 	InFile.close();
 	return i; // report success? ... i.e. return the record count ... 
