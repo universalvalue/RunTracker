@@ -15,7 +15,7 @@ const std::string TITLE =	"    ___                 _             ___\n"
 
 const std::string HEADER =   "\nWhat do you want to do ?\n\n"
 			"\t1. A dd a new run ? \n"
-			"\t2. E dit/E rase a student record ? \n"
+			"\t2. Add a new  T rack ? \n"
 			"\t3. S ort a student record ? \n"
 			"\t4. V iew all in memory at present ? \n"
 			"\t5. U pdate file with data currently in memory ? \n"

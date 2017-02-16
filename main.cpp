@@ -1,7 +1,7 @@
 // A C++ program to track running training distances and times
 // using lists and external functions
 //
-// All data is saved in data/RunsData.txt
+// All data is saved in data/RunsData.txt and TracksData.txt
 // External functions are placed in source/
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -64,9 +64,14 @@ int main(){
 			/* if( numStuds ) */
 			/* changes = true; // if >0 update bool variable changes */
 		}
-		else if( reply == '2' || reply == 'E' )
+		else if( reply == '2' || reply == 'T' )
 		{
-			std::cout << "The input was 2,which means I'm gonna end this program now!\n";
+			std::cout << "The input was 2,which means you want to add a new track. Unfortunately this choice is not implemented yet, so I'm gonna end this program now!\n";
+			break; //Exit Program
+		}
+		else if( reply == '7' || reply == 'X' )
+		{
+			std::cout << "The input was 7,which means I'm gonna end this program now!\n";
 			break; //Exit Program
 		}
 		else{

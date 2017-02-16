@@ -19,5 +19,8 @@ int WriteRuns( std::list<Run> &RunList, const char RUNS_DATA[]);
 int WriteTracks();
 int ReadRuns( std::list<Run> &RunList, std::list<Track> &TrackList, const char RUNS_DATA[]);
 int ReadTracks(std::list<Track> &TrackList, const char TRACKS_DATA[]);
+int AddTrack();
+int AddRun();
+std::list< Track >::iterator ExistTrack( std::list< Track > &AllTracks, std::string trackname );
 
 #endif
