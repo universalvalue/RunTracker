@@ -57,6 +57,7 @@ int main(){
 
 		if( reply == '1' || reply == 'A' ){
 			std::cout << "The input was 1\n";//<< std::endl;
+			/* addrun */
 			/* int numStuds = newStud( fall ); */
 			/* cout << endl << numStuds << " student record(s) added ..." */
 			/* << " The total number of student records now is " */
@@ -67,6 +68,7 @@ int main(){
 		else if( reply == '2' || reply == 'T' )
 		{
 			std::cout << "The input was 2,which means you want to add a new track. Unfortunately this choice is not implemented yet, so I'm gonna end this program now!\n";
+			/* AddTrack */
 			break; //Exit Program
 		}
 		else if( reply == '7' || reply == 'X' )
