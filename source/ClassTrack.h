@@ -12,6 +12,7 @@ class Track{
 	public:
 		/* //constructors ... */
 		/* Student(string nam, string num ) { name=nam; id=num; } */
+		Track(){}
 		Track(std::string title, std::map<std::string, double> waypoints ) { TrackTitle = title; TrackWaypoints = waypoints; }
 
 		// setters ...

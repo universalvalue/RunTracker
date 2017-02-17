@@ -24,7 +24,8 @@ int ReadTracks ( std::list<Track> &TrackList, const char TRACKS_DATA[]){
 	std::vector<std::string> Descriptions, DistancesStrings;
 	std::vector<double> Distances;
 	std::map<std::string, double> trackinfo;
-	for( i = 0; getline( InFile, trackname, '\n' ); ++i ) //first get 1st string (up to '\n')
+	int i;
+	for(i = 0; getline( InFile, trackname, '\n' ); ++i ) //first get 1st string (up to '\n')
 	{
 		getline( InFile, DescriptionsAll, '\n'); 
 		std::vector<std::string> Descriptions = Split(DescriptionsAll, ',');

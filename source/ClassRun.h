@@ -12,7 +12,7 @@
 class Run{
 	public:
 		//constructors ...
-		/* Student(){} */
+		Run(){}
 		Run(std::string date, std::string time, double distance, Track track, std::vector<std::string> times ) { RunDate = date; RunTime = time; RunDistance = distance; RunTrack = track; TrackTimes = times; }
 
 		// setters ...
