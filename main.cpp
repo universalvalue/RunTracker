@@ -48,7 +48,8 @@ int main(){
 	ImportRuns(AllRuns, AllTracks, RUNS_DATA);
 
 
-	bool changes = false; // set 'update file flag' to initial value ...
+	bool changesTracks = false; // set 'update file flag' to initial value ...
+	bool changesRuns = false; // set 'update file flag' to initial value ...
 	int reply;
 	ClearScreen();
 	for( ;; ){ // loop forever ... until break ...
@@ -62,7 +63,7 @@ int main(){
 				/* << " The total number of student records now is " */
 				/* << fall.size() << endl; */
 				if( numAddedRuns ){
-					changes = true; // if >0 update bool variable changes
+					changesRuns = true; // if >0 update bool variable changes
 				}
 		}
 		else if( reply == '2' || reply == 'T' )
@@ -71,7 +72,7 @@ int main(){
 			int numAddedTracks = AddTrack( AllTracks );
 			std::cout << std::endl << numAddedTracks << " track record(s) added ..."
 				if( numAddedTracks ){
-					changes = true; // if >0 update bool variable changes
+					changesTracks = true; // if >0 update bool variable changes
 				}
 		}
 		else if( reply == '7' || reply == 'X' )
