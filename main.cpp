@@ -42,7 +42,7 @@ int main(){
 	//create a list to hold Tracks 
 	// also holds number of records, via '.size()'
 	std::list <Track> AllTracks;
-	
+
 	ImportTracks(AllTracks, TRACKS_DATA);
 
 	ImportRuns(AllRuns, AllTracks, RUNS_DATA);
@@ -57,19 +57,22 @@ int main(){
 
 		if( reply == '1' || reply == 'A' ){
 			std::cout << "The input was 1\n";//<< std::endl;
-			/* addrun */
-			/* int numStuds = newStud( fall ); */
-			/* cout << endl << numStuds << " student record(s) added ..." */
-			/* << " The total number of student records now is " */
-			/* << fall.size() << endl; */
-			/* if( numStuds ) */
-			/* changes = true; // if >0 update bool variable changes */
+			int numAddedRuns = AddRun( AllTracks, AllRuns );
+			std::cout << std::endl << numAddedRuns << " run record(s) added ..."
+				/* << " The total number of student records now is " */
+				/* << fall.size() << endl; */
+				if( numAddedRuns ){
+					changes = true; // if >0 update bool variable changes
+				}
 		}
 		else if( reply == '2' || reply == 'T' )
 		{
 			std::cout << "The input was 2,which means you want to add a new track. Unfortunately this choice is not implemented yet, so I'm gonna end this program now!\n";
-			/* AddTrack */
-			break; //Exit Program
+			int numAddedTracks = AddTrack( AllTracks );
+			std::cout << std::endl << numAddedTracks << " track record(s) added ..."
+				if( numAddedTracks ){
+					changes = true; // if >0 update bool variable changes
+				}
 		}
 		else if( reply == '7' || reply == 'X' )
 		{
