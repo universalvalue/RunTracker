@@ -20,7 +20,8 @@ const std::string HEADER =   "\nWhat do you want to do ?\n\n"
 			"\t4. V iew all in memory at present ? \n"
 			"\t5. U pdate file with data currently in memory ? \n"
 			"\t6. L oad in data from file ? \n"
-			"\t7. e X it program ? \n\n\n\n";
+			"\t7. E xit program without saving? \n";
+			"\t8. Save and e X it program ? \n\n\n\n";
 
 
 void PrintMainMenu(){

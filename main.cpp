@@ -75,9 +75,15 @@ int main(){
 					changesTracks = true; // if >0 update bool variable changes
 				}
 		}
-		else if( reply == '7' || reply == 'X' )
+		else if( reply == '7' || reply == 'E' )
 		{
 			std::cout << "The input was 7,which means I'm gonna end this program now!\n";
+			
+			break; //Exit Program
+		}
+		else if( reply == '8' || reply == 'X' )
+		{
+			std::cout << "The input was 8,which means I'm gonna end this program now!\n";
 			std::cout << "Before closing all changes are saved!\n";
 			if (changesTracks == true){
 				invokeWriteTracks( AllTracks, TRACKS_DATA);
