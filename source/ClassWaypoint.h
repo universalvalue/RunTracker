@@ -15,7 +15,7 @@ class Waypoint{
 
 		// setters ...
 		void setTitle(std::string title){ WaypointTitle = title; }
-		void setDistance(double distance) { WaypointDistance = daypoints; }
+		void setDistance(double distance) { WaypointDistance = distance; }
 
 		// getters ...
 		std::string getTitle() { return WaypointTitle; }
