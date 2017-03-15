@@ -10,21 +10,15 @@ int writeTracks (std::list< Track > &TrackList, const char TRACKS_DATA[]){
 	for( it = TrackList.begin(); it != TrackList.end(); ++it ) //first get 1st string (up to ',')
 	{
 		OutFile << it->getTitle() << "\n" ;
-		std::map< std::string, double >::iterator itmap;
-		std::cout << "ier";
-		std::cout.flush();
-		for ( itmap = it->getWaypoints().begin(); itmap != std::prev(it->getWaypoints().end()); ++itmap){
-			std::cout << "2ier";
-			std::cout.flush();
-			OutFile << itmap->first << ",";
+		std::list< Waypoint >::iterator itWaypoint;
+		for ( itWaypoint = it->getWaypoints().begin(); itWaypoint != std::prev(it->getWaypoints().end()); ++itWaypoint){
+			OutFile << itWaypoint->getTitle() << ",";
 		}
-			std::cout << "3ier";
-			std::cout.flush();
-		OutFile << std::prev(it->getWaypoints().end())->first << "\n";
-		for ( itmap = it->getWaypoints().begin(); itmap != std::prev(it->getWaypoints().end()); ++itmap){
-			OutFile << itmap->second << ",";
-		}
-		OutFile << it->getWaypoints().end()->second << "\n";
+		OutFile << std::prev(it->getWaypoints().end())->getTitle() << "\n";
+		/* for ( itmap = it->getWaypoints().begin(); itmap != std::prev(it->getWaypoints().end()); ++itmap){ */
+		/* OutFile << itmap->second << ","; */
+		/* } */
+		/* OutFile << it->getWaypoints().end()->second << "\n"; */
 		++i;
 	}
 	OutFile.close();

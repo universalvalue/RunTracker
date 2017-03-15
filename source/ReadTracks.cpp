@@ -23,7 +23,7 @@ int ReadTracks ( std::list<Track> &TrackList, const char TRACKS_DATA[]){
 	std::string trackname, DistancesAll, DescriptionsAll;
 	std::vector<std::string> Descriptions, DistancesStrings;
 	std::vector<double> Distances;
-	std::map<std::string, double> trackinfo;
+	std::list< Waypoint> trackWaypoints;
 	int i;
 	for(i = 0; getline( InFile, trackname, '\n' ); ++i ) //first get 1st string (up to '\n')
 	{
@@ -35,10 +35,10 @@ int ReadTracks ( std::list<Track> &TrackList, const char TRACKS_DATA[]){
 		      return std::stod(val);
 	      });
 		for (int j = 0; j < Descriptions.size(); ++j){
-			    trackinfo[Descriptions[j]] = Distances[j]; 
+			    trackWaypoints.push_back( Waypoint(Descriptions[j], Distances[j]) ); 
 		}
 
-		TrackList.push_back( Track( trackname, trackinfo)); // construct and add new Student
+		TrackList.push_back( Track( trackname, trackWaypoints)); // construct and add new Student
 	}
 	InFile.close();
 	return i; // report success? ... i.e. return the record count ... 

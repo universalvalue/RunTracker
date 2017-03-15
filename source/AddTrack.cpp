@@ -15,10 +15,10 @@ int AddTrack( std::list< Track >& AllTracks ){
 	int count = 0, reply;
 	std::string trackname, Description, DistanceString;
 	double Distance;
-	std::map<std::string, double> trackinfo;
+	std::list< Waypoint> trackinfo;
 
 	for( ;; ){ // loop forever until break ...
-		std::cout << "\nTrack Name   : ";
+		std::cout << "\nTrack Name: ";
 		std::getline(std::cin, trackname);
 		if( ExistTrack( AllTracks, trackname ) != AllTracks.end() ){
 			std::cout << "\nThat track title " << trackname << " already exits ... " << std::endl;
@@ -29,22 +29,22 @@ int AddTrack( std::list< Track >& AllTracks ){
 			break;
 		}
 
-		std::cout << "\n How many waypoints do you want to enter? (max 9)";
+		std::cout << "\nHow many waypoints do you want to enter (min. 1 / max. 9)? ";
 		reply = GetInput() - '0';
 
 		for (int i = 0; i < reply; i++){
-			std::cout << "Name of waypoint : ";
+			std::cout << "Name of waypoint: ";
 			std::getline(std::cin, Description);
 
-			std::cout << "Distance of waypoint : ";
+			std::cout << "Distance of waypoint: ";
 			std::getline(std::cin, DistanceString);
 
 			Distance = stod(DistanceString);
 
-			trackinfo[Description] = Distance;
+			trackinfo.push_back( Waypoint(Description, Distance));
 		}
 
-		std::cout << "Add or Redo (a/R) ? ";
+		std::cout << "Add or Redo (a/R)? ";
 		reply=GetInput();
 		if ( toupper(reply) != 'A' ){
 			std::cout << "Aborted ..." << std::endl;

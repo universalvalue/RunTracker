@@ -3,6 +3,8 @@
 
 #include <string>
 #include <map>
+#include "ClassWaypoint.h"
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //		Introduce class "Track"
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -13,17 +15,17 @@ class Track{
 		/* //constructors ... */
 		/* Student(string nam, string num ) { name=nam; id=num; } */
 		Track(){}
-		Track(std::string title, std::map<std::string, double> waypoints ) { TrackTitle = title; TrackWaypoints = waypoints; }
+		Track(std::string title, std::list< Waypoint > waypoints ) { TrackTitle = title; TrackWaypoints = waypoints; }
 
 		// setters ...
 		void setTitle(std::string title){ TrackTitle = title; }
-		void setWaypoints(std::map<std::string, double> waypoints) { TrackWaypoints = waypoints; }
+		void setWaypoints(std::list< Waypoint > waypoints) { TrackWaypoints = waypoints; }
 
 		// getters ...
 		std::string getTitle() { return TrackTitle; }
-		std::map<std::string, double> getWaypoints() { return TrackWaypoints; }
+		std::list< Waypoint > getWaypoints() { return TrackWaypoints; }
 	private:
 		std::string TrackTitle; // add any needed info here, just like in a C/C++ 'struct'
-		std::map<std::string, double> TrackWaypoints;	
+		std::list< Waypoint > TrackWaypoints;	
 };
 #endif

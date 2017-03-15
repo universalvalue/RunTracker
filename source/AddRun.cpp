@@ -17,20 +17,20 @@ int AddRun( std::list< Track >& AllTracks, std::list< Run >& AllRuns){
 	Track runtrack;
 	std::vector< std::string > runtimes;
 	for( ;; ){ // loop forever until break ...
-		std::cout << "\n Run Date (DD/MM/YY): ";
+		std::cout << "\nRun Date (DD/MM/YY): ";
 		std::getline(std::cin, rundate);
 
 		if( rundate == ""){
 			break;
 		}
-		std::cout << "How much time did it take? (MM:SS)";
+		std::cout << "\nHow much time did it take (MM:SS)? ";
 		std::getline(std::cin,runtime); 
 
-		std::cout << "How many kilometers was the run?";
+		std::cout << "\nHow many kilometers was the run? ";
 		std::getline(std::cin,distancestring);
 		Distance = stod(distancestring);
 
-		std::cout << "What track did you run?\n";
+		std::cout << "\nWhat track did you run?\n";
 		std::list<Track>::iterator it;
 		int i = 1;
 		for (it = AllTracks.begin(); it != AllTracks.end(); it++){
@@ -41,7 +41,7 @@ int AddRun( std::list< Track >& AllTracks, std::list< Run >& AllRuns){
 			std::cout << "ATTENTION!\nThere are no tracks in memory...\nPlease add first a track before adding a run!\nReturning to Menu...\n";
 			return 0;
 		}
-		std::cout << ">>";
+		std::cout << "\n>> ";
 		int reply = GetInput(); 
 		int j = 1;
 		for (it = AllTracks.begin(); it != AllTracks.end(); it++){
@@ -51,15 +51,15 @@ int AddRun( std::list< Track >& AllTracks, std::list< Run >& AllRuns){
 			j++;
 		}
 
-		std::cout << "Times to reach the waypoints on this track? (if unknown please enter 0/0)\n";
-		for (std::map< std::string, double >::iterator it = runtrack.getWaypoints().begin(); it != runtrack.getWaypoints().end(); it++){
-			std::cout << it->first << "\t" << it->second << "\n";
+		std::cout << "Times to reach the waypoints on this track (if unknown please enter 0/0)?\n";
+		for (std::list< Waypoint >::iterator it = runtrack.getWaypoints().begin(); it != runtrack.getWaypoints().end(); it++){
+			std::cout << it->getTitle() << "\t" << it->getDistance() << ":\n";
 			std::getline(std::cin, temptime);
 			runtimes.push_back(temptime);
 		}
 
 
-		std::cout << "Add or Redo (a/R) ? ";
+		std::cout << "\nAdd or Redo (a/R)? ";
 		reply=GetInput();
 		if ( toupper(reply) != 'A' ){
 			std::cout << "Aborted ..." << std::endl;
