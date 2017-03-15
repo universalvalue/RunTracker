@@ -28,5 +28,4 @@ int writeTracksCheck(std::list< Track > &TrackList, const char TRACKS_DATA[]){
 		return -1;
 	}
 	return 0;
-
 }

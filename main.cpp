@@ -91,10 +91,11 @@ int main(){
 			if (changesRuns == true){
 				invokeWriteRuns( AllRuns, RUNS_DATA);
 			}
-			else{
-				std::cout << " But there are no changes to be saved!\n Good Bye and keep on running! \n";
+			if ( ( changesRuns == false ) && (changesTracks == false) ){
+				std::cout << " But there are no changes to be saved!\n";
 			}
 
+				std::cout << "Good Bye and keep on running! \n";
 			break; //Exit Program
 		}
 		else{

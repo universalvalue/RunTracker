@@ -29,8 +29,8 @@ int AddTrack( std::list< Track >& AllTracks ){
 			break;
 		}
 
-		std::cout << "\n How many waypoints do you want to enter?";
-		reply = GetInput();
+		std::cout << "\n How many waypoints do you want to enter? (max 9)";
+		reply = GetInput() - '0';
 
 		for (int i = 0; i < reply; i++){
 			std::cout << "Name of waypoint : ";

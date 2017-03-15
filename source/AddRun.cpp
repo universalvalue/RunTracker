@@ -37,6 +37,11 @@ int AddRun( std::list< Track >& AllTracks, std::list< Run >& AllRuns){
 			std::cout << i <<":\t"<< it->getTitle()<<"\n";
 			i++;
 		}
+		if ( i == 1 ){
+			std::cout << "ATTENTION!\nThere are no tracks in memory...\nPlease add first a track before adding a run!\nReturning to Menu...\n";
+			return 0;
+		}
+		std::cout << ">>";
 		int reply = GetInput(); 
 		int j = 1;
 		for (it = AllTracks.begin(); it != AllTracks.end(); it++){

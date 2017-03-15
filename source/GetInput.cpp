@@ -6,6 +6,5 @@ int GetInput(){
 	reply = std::toupper(std::cin.get());
 	std::cin.clear();
 	std::cin.ignore(256,'\n');   // ignore until space
-
 	return reply;
 }
