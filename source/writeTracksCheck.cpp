@@ -1,4 +1,5 @@
 #include "RunningAppFunctions.h"
+#include <fstream>
 
 int writeTracksCheck(std::list< Track > &TrackList, const char TRACKS_DATA[]){
 	std::ofstream OutFile( TRACKS_DATA ); 

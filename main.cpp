@@ -27,8 +27,8 @@
 //		Global variables
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-const char RUNS_DATA[] = "RunsData.txt"; // file name for the data file containing all the runs
-const char TRACKS_DATA[] = "TracksData.txt"; // file name for the data file containing all the runs
+const char RUNS_DATA[] = "data/RunsData.txt"; // file name for the data file containing all the runs
+const char TRACKS_DATA[] = "data/TracksData.txt"; // file name for the data file containing all the runs
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //		Main
@@ -59,26 +59,26 @@ int main(){
 		if( reply == '1' || reply == 'A' ){
 			std::cout << "The input was 1\n";//<< std::endl;
 			int numAddedRuns = AddRun( AllTracks, AllRuns );
-			std::cout << std::endl << numAddedRuns << " run record(s) added ..."
-				/* << " The total number of student records now is " */
-				/* << fall.size() << endl; */
-				if( numAddedRuns ){
-					changesRuns = true; // if >0 update bool variable changes
-				}
+			std::cout << std::endl << numAddedRuns << " run record(s) added ...";
+			/* << " The total number of student records now is " */
+			/* << fall.size() << endl; */
+			if( numAddedRuns ){
+				changesRuns = true; // if >0 update bool variable changes
+			}
 		}
 		else if( reply == '2' || reply == 'T' )
 		{
 			std::cout << "The input was 2,which means you want to add a new track. Unfortunately this choice is not implemented yet, so I'm gonna end this program now!\n";
 			int numAddedTracks = AddTrack( AllTracks );
-			std::cout << std::endl << numAddedTracks << " track record(s) added ..."
-				if( numAddedTracks ){
-					changesTracks = true; // if >0 update bool variable changes
-				}
+			std::cout << std::endl << numAddedTracks << " track record(s) added ...";
+			if( numAddedTracks ){
+				changesTracks = true; // if >0 update bool variable changes
+			}
 		}
 		else if( reply == '7' || reply == 'E' )
 		{
 			std::cout << "The input was 7,which means I'm gonna end this program now!\n";
-			
+
 			break; //Exit Program
 		}
 		else if( reply == '8' || reply == 'X' )
@@ -94,7 +94,7 @@ int main(){
 			else{
 				std::cout << " But there are no changes to be saved!\n Good Bye and keep on running! \n";
 			}
-			
+
 			break; //Exit Program
 		}
 		else{

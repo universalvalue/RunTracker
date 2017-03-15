@@ -9,11 +9,11 @@ int WriteRuns (std::list<Run> &RunList, const char RUNS_DATA[]){
 	std::list< Run >::iterator it; 
 	for( it = RunList.begin(); it != RunList.end(); ++it ) //first get 1st string (up to ',')
 	{
-		OutFile << it->getDate() << "\n" << it->getTime() << "\n" << it->getDistance() << "\n" << it->getTrack.getTitle() << "\n" ;
+		OutFile << it->getDate() << "\n" << it->getTime() << "\n" << it->getDistance() << "\n" << it->getTrack().getTitle() << "\n" ;
 		for ( int j = 0; j < it->getTrackTimes().size() - 1; j++){
 			OutFile << it->getTrackTimes()[j] << ",";
 		}
-		OutFile << it->getTrackTimes()[getTrackTimes().size -1] << "\n";
+		OutFile << it->getTrackTimes()[it->getTrackTimes().size() -1] << "\n";
 		++i;
 	}
 	OutFile.close();

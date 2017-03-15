@@ -11,14 +11,14 @@ int writeTracks (std::list< Track > &TrackList, const char TRACKS_DATA[]){
 	{
 		OutFile << it->getTitle() << "\n" ;
 		std::map< std::string, double >::iterator itmap;
-		for ( itmap = it.getWaypoints().begin(); itmap != std::prev(it.getWaypoints().end()); ++itmap){
-			OutFile << itmap.first << ",";
+		for ( itmap = it->getWaypoints().begin(); itmap != std::prev(it->getWaypoints().end()); ++itmap){
+			OutFile << itmap->first << ",";
 		}
-		OutFile << it.getWaypoints().end().first << "\n";
-		for ( itmap = it.getWaypoints().begin(); itmap != std::prev(it.getWaypoints().end()); ++itmap){
-			OutFile << itmap.second << ",";
+		OutFile << it->getWaypoints().end()->first << "\n";
+		for ( itmap = it->getWaypoints().begin(); itmap != std::prev(it->getWaypoints().end()); ++itmap){
+			OutFile << itmap->second << ",";
 		}
-		OutFile << it.getWaypoints().end().seconds << "\n";
+		OutFile << it->getWaypoints().end()->second << "\n";
 		++i;
 	}
 	OutFile.close();

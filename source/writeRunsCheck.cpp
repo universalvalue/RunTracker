@@ -1,4 +1,5 @@
 #include "RunningAppFunctions.h"
+#include <fstream>
 
 int writeRunsCheck(std::list<Run> &RunList, const char RUNS_DATA[]){
 	std::ofstream OutFile( RUNS_DATA ); 
