@@ -78,6 +78,17 @@ int main(){
 		else if( reply == '7' || reply == 'X' )
 		{
 			std::cout << "The input was 7,which means I'm gonna end this program now!\n";
+			std::cout << "Before closing all changes are saved!\n";
+			if (changesTracks == true){
+				invokeWriteTracks( AllTracks, TRACKS_DATA);
+			}
+			if (changesRuns == true){
+				invokeWriteRuns( AllRuns, RUNS_DATA);
+			}
+			else{
+				std::cout << " But there are no changes to be saved!\n Good Bye and keep on running! \n";
+			}
+			
 			break; //Exit Program
 		}
 		else{
