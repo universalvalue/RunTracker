@@ -23,12 +23,6 @@ int AddRun( std::list< Track >& AllTracks, std::list< Run >& AllRuns){
 		if( rundate == ""){
 			break;
 		}
-		std::cout << "\nHow much time did it take (MM:SS)? ";
-		std::getline(std::cin,runtime); 
-
-		std::cout << "\nHow many kilometers was the run? ";
-		std::getline(std::cin,distancestring);
-		Distance = stod(distancestring);
 
 		std::cout << "\nWhat track did you run?\n";
 		std::list<Track>::iterator it;
@@ -50,6 +44,13 @@ int AddRun( std::list< Track >& AllTracks, std::list< Run >& AllRuns){
 			}
 			j++;
 		}
+		std::cout << "\nHow much time did it take (MM:SS)? ";
+		std::getline(std::cin,runtime); 
+
+		std::cout << "\nHow many kilometers was the run? ";
+		std::getline(std::cin,distancestring);
+		Distance = stod(distancestring);
+
 
 		std::cout << "Times to reach the waypoints on this track (if unknown please enter 0/0)?\n";
 		for (std::list< Waypoint >::iterator it = runtrack.getWaypoints().begin(); it != runtrack.getWaypoints().end(); it++){
