@@ -10,15 +10,16 @@ int writeTracks (std::list< Track > &TrackList, const char TRACKS_DATA[]){
 	for( it = TrackList.begin(); it != TrackList.end(); ++it ) //first get 1st string (up to ',')
 	{
 		OutFile << it->getTitle() << "\n" ;
+		std::list< Waypoint > TempWaypoints = it->getWaypoints();
 		std::list< Waypoint >::iterator itWaypoint;
-		for ( itWaypoint = it->getWaypoints().begin(); itWaypoint != std::prev(it->getWaypoints().end()); ++itWaypoint){
+		for ( itWaypoint = TempWaypoints.begin(); itWaypoint != std::prev(TempWaypoints.end()); itWaypoint++){
 			OutFile << itWaypoint->getTitle() << ",";
 		}
-		OutFile << std::prev(it->getWaypoints().end())->getTitle() << "\n";
-		/* for ( itmap = it->getWaypoints().begin(); itmap != std::prev(it->getWaypoints().end()); ++itmap){ */
-		/* OutFile << itmap->second << ","; */
-		/* } */
-		/* OutFile << it->getWaypoints().end()->second << "\n"; */
+		OutFile << std::prev(TempWaypoints.end())->getTitle() << "\n";
+		for ( itWaypoint = TempWaypoints.begin(); itWaypoint != std::prev(TempWaypoints.end()); itWaypoint++){
+			OutFile << itWaypoint->getDistance() << ",";
+		}
+		OutFile << std::prev(TempWaypoints.end())->getDistance() << "\n";
 		++i;
 	}
 	OutFile.close();
