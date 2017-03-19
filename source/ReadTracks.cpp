@@ -31,11 +31,12 @@ int ReadTracks ( std::list<Track> &TrackList, const char TRACKS_DATA[]){
 		std::vector<std::string> Descriptions = Split(DescriptionsAll, ',');
 		getline( InFile, DistancesAll, '\n'); 
 		std::vector<std::string> DistancesStrings = Split(DistancesAll, ',');
+		Distances.resize(DistancesStrings.size());
 		std::transform(DistancesStrings.begin(), DistancesStrings.end(), Distances.begin(), [](const std::string& val){
-		      return std::stod(val);
-	      });
+				return std::stod(val);
+				});
 		for (int j = 0; j < Descriptions.size(); ++j){
-			    trackWaypoints.push_back( Waypoint(Descriptions[j], Distances[j]) ); 
+			trackWaypoints.push_back( Waypoint(Descriptions[j], Distances[j]) ); 
 		}
 
 		TrackList.push_back( Track( trackname, trackWaypoints)); // construct and add new Student
