@@ -14,6 +14,7 @@ void ImportTracks(std::list<Track> &AllTracks, const char TRACKS_DATA[]);
 void ImportRuns(std::list<Run> &AllRuns, std::list<Track> &AllTracks,  const char RUNS_DATA[]);
 std::vector<std::string> Split(const std::string &s, char delim);
 void PrintMainMenu();
+int showAllTracks( std::list< Track >& AllTracks );
 int GetInput();
 int WriteRuns( std::list<Run> &RunList, const char RUNS_DATA[]);
 int invokeWriteRuns( std::list<Run> &RunList, const char RUNS_DATA[]);

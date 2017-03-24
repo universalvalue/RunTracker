@@ -16,7 +16,7 @@ int writeTracksCheck(std::list< Track > &TrackList, const char TRACKS_DATA[]){
 		/* return 0;          // report error condition ... */
 	}
 	else if ( TrackList.size() ){ // i.e. if not == 0 ...
-		std::cout << "\nDo you want to write the " << TrackList.size() << " records in memory to file (y/N) ? " << std::flush;
+		std::cout << "\nDo you want to write the " << TrackList.size() << " track records in memory to file (y/N) ? " << std::flush;
 		int reply = GetInput(); 
 		if( reply != 'Y' ){
 			std::cout << "Aborted ... " << std::flush;

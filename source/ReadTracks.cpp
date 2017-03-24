@@ -40,6 +40,7 @@ int ReadTracks ( std::list<Track> &TrackList, const char TRACKS_DATA[]){
 		}
 
 		TrackList.push_back( Track( trackname, trackWaypoints)); // construct and add new Student
+		trackWaypoints.clear();
 	}
 	InFile.close();
 	return i; // report success? ... i.e. return the record count ... 

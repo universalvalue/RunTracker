@@ -36,7 +36,9 @@ int AddRun( std::list< Track >& AllTracks, std::list< Run >& AllRuns){
 			return 0;
 		}
 		std::cout << "\n>> ";
-		int reply = GetInput(); 
+		int reply;
+		reply = GetInput() - '0';
+		/* reply = reply + '0'; */
 		int j = 1;
 		for (it = AllTracks.begin(); it != AllTracks.end(); it++){
 			if( reply == j ){
@@ -47,17 +49,20 @@ int AddRun( std::list< Track >& AllTracks, std::list< Run >& AllRuns){
 		std::cout << "\nHow much time did it take (MM:SS)? ";
 		std::getline(std::cin,runtime); 
 
-		std::cout << "\nHow many kilometers was the run? ";
-		std::getline(std::cin,distancestring);
-		Distance = stod(distancestring);
+		/* std::cout << "\nHow many kilometers was the run? "; */
+		/* std::getline(std::cin,distancestring); */
+		/* Distance = stod(distancestring); */
 
-
+		std::list < Waypoint > WaypointList = runtrack.getWaypoints();
 		std::cout << "Times to reach the waypoints on this track (if unknown please enter 0/0)?\n";
-		for (std::list< Waypoint >::iterator it = runtrack.getWaypoints().begin(); it != runtrack.getWaypoints().end(); it++){
+		/* for (std::list< Waypoint >::iterator it = runtrack.getWaypoints().begin(); it != runtrack.getWaypoints().end(); it++){ */
+		for (std::list< Waypoint >::iterator it = WaypointList.begin(); it != std::prev(WaypointList.end()); it++){
 			std::cout << it->getTitle() << "\t" << it->getDistance() << ":\n";
 			std::getline(std::cin, temptime);
 			runtimes.push_back(temptime);
 		}
+		Distance = std::prev(WaypointList.end()) -> getDistance();
+		runtimes.push_back(runtime);
 
 
 		std::cout << "\nAdd or Redo (a/R)? ";

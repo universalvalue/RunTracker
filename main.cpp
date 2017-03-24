@@ -76,6 +76,14 @@ int main(){
 				changesTracks = true; // if >0 update bool variable changes
 			}
 		}
+		else if( reply == '3' || reply == 'S' ){
+			std::cout << "The input was 3, which means I'm gonna print all Tracks in memory now!\n";
+			showAllTracks( AllTracks );
+		}
+		else if( reply == '4' || reply == 'R' ){
+			std::cout << "The input was 4, which means I'm gonna print all Tracks in memory now!\n";
+
+		}
 		else if( reply == '7' || reply == 'E' )
 		{
 			std::cout << "The input was 7,which means I'm gonna end this program now!\n";
@@ -96,7 +104,7 @@ int main(){
 				std::cout << " But there are no changes to be saved!\n";
 			}
 
-				std::cout << "Good Bye and keep on running! \n";
+			std::cout << "Good Bye and keep on running! \n";
 			break; //Exit Program
 		}
 		else{

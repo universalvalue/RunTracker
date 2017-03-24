@@ -16,7 +16,7 @@ int writeRunsCheck(std::list<Run> &RunList, const char RUNS_DATA[]){
 		/* return 0;          // report error condition ... */
 	}
 	else if ( RunList.size() ){ // i.e. if not == 0 ...
-		std::cout << "\nDo you want to write the " << RunList.size() << " records in memory to file (y/N) ? " << std::flush;
+		std::cout << "\nDo you want to write the " << RunList.size() << " run records in memory to file (y/N) ? " << std::flush;
 		int reply = GetInput(); 
 		if( reply != 'Y' ){
 			std::cout << "Aborted ... " << std::flush;
